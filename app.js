@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 
@@ -8,6 +9,6 @@ app.get("/api", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server Up and Running!!!");
+app.listen(process.env.APP_PORT, () => {
+  console.log("Server Up and Running!!!", process.env.APP_PORT);
 });
