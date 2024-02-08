@@ -4,9 +4,10 @@ const { genSaltSync, hashSync } = require("bcrypt");
 module.exports = {
   createUser: (req, res) => {
     const body = req.body;
+    console.log(body);
     //password encypt
-    const salt = genSaltSync(10);
-    body.password = hashSync(body.password, salt);
+    // const salt = genSaltSync(10);
+    //body.password = hashSync(body.password, salt);
     create(body, (err, results) => {
       if (err) {
         console.log("Create User Error", err);
